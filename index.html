@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="present.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/nghuong-icon.png"/>
+    <!-- GOOGLE fONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&family=Rubik+Glitch+Pop&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pacifico&family=Protest+Revolution&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>For My Bbi</title>
+</head>
+
+<body>
+    <div class="container">
+        <img class="paperHeart paperHeart1" style="--time: 0s" src="./img/paperHeart.webp" alt="">
+        <img class="paperHeart paperHeart2" style="--time: 1s" src="./img/paperHeart.webp" alt="">
+        <img class="paperHeart paperHeart3" style="--time: 2.5s" src="./img/paperHeart.webp" alt="">
+        <img class="paperHeart paperHeart4" style="--time: 4s" src="./img/paperHeart.webp" alt="">
+        <img class="paperHeart paperHeart5" style="--time: 2s" src="./img/paperHeart.webp" alt="">
+        <img class="paperHeart paperHeart6" style="--time: 3s" src="./img/paperHeart.webp" alt="">
+
+        <div class="boxTitle">
+            <p class="title-pc">Dành cho em</p>
+            <p class="title-mobi">Ểnh<br>w<br>Bbi</p>
+        </div>
+
+        <div class="boxCloud">
+            <div class="cloud"></div>
+            <div class="cloud1"></div>
+            <div class="cloud2"></div>
+
+            <div class="btnBox">
+                <div class="cloudBtn"></div>
+                <button class="openBtn" id="dichuyen">Chạm vào đây đi bbi</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="gradient-background" id="cauhoi">
+        <div class="flex items-center justify-center h-screen">
+            <div class="flex flex-col items-center p-4">
+              <img id="imageDisplay" data-aos="zoom-in" src="./img/cat-0.jpg" alt="Cute kitten with flowers" class="rounded-md h-[300px]" style="object-fit: cover;" />
+              <h2 id="valentineQuestion" data-aos="zoom-in" class="title font-bold italic text-[#77341d] my-4">Bbi đi chơi trung thu với anh hum?</h2>
+              <div data-aos="zoom-in" class="flex gap-4 pt-[20px] items-center" id="responseButtons">
+                <button id="yesButton"
+                  class="bounce2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-[20px] font-medium disabled:pointer-events-none disabled:opacity-50 hover:bg-green-400 min-h-12 min-w-[75px] px-4 py-2 bg-green-500 text-white transition">
+                  Oki
+                </button>
+                <button id="noButton"
+                  class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-[20px] font-medium transition disabled:pointer-events-none disabled:opacity-50 hover:bg-red-700 h-12 min-w-[75px] w-auto px-4 py-2 bg-red-500 text-white">
+                  Không!
+                </button>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container-boxpresent" id="hopqua">
+      <div class="giftcontainer">
+          <div class="gift">
+              <input type="checkbox" id="click">
+              <label for="click" class="click"></label>
+              <div class="wishes">Cho mượn 5 xị <i class="fa-solid fa-money-bill-wave" ></i></div>
+          </div>
+      </div>
+  </div>
+
+    <script type="module">
+        import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const imageDisplay = document.getElementById('imageDisplay');
+        const valentineQuestion = document.getElementById('valentineQuestion');
+        const responseButtons = document.getElementById('responseButtons');
+      
+        let noClickCount = 0;
+        let buttonHeight = 48; // Starting height in pixels
+        let buttonWidth = 80;
+        let fontSize = 20; // Starting font size in pixels
+        const imagePaths = [
+          "./img/cat-0.jpg",
+          "./img/cat-1.jpg",
+          "./img/cat-2.jpg",
+          "./img/cat-3.jpg",
+          "./img/cat-4.jpg",
+          "./img/cat-5.jpg",
+          "./img/cat-6.gif",
+          "./img/cat-7.gif",
+          "./img/cat-8.gif",
+          "./img/cat-9.gif",
+          "./img/angry-1.gif",
+          "./img/angry-2.gif",
+          "./img/angry-3.gif",
+          "./img/angry-4.gif",
+          "./img/angry-5.gif",
+          "./img/angry-6.gif",
+          "./img/angry-7.gif",
+          "./img/angry-8.gif",
+          "./img/angry-9.gif",
+          "./img/angry-10.gif",
+          "./img/image2.gif",
+          "./img/image3.gif",
+          "./img/image4.gif",
+          "./img/image5.gif",
+          "./img/image6.gif",
+    
+        ];
+      
+        noButton.addEventListener('click', function() {
+          if (noClickCount < 33) {
+            noClickCount++;
+            imageDisplay.src = imagePaths[noClickCount];
+            buttonHeight += 40; // Increase height by 5px on each click
+            buttonWidth += 40;
+            fontSize += 25; // Increase font size by 1px on each click
+            yesButton.style.height = `${buttonHeight}px`; // Update button height
+            yesButton.style.width = `${buttonWidth}px`;
+            yesButton.style.fontSize = `${fontSize}px`; // Update font size
+            if (noClickCount < 34) {
+              noButton.textContent = ["Không!", "Em chắc chưa?", "Em hong sợ anh bùn ha", "Đừng màaa", "Không cc", "Ngon không nữa coi?", "Á à rứa mà cũng bấm", "Nô", "Ai cho không?", "Có đi", "Không cgi", "Vợ có i", "Không hoài cu", "Không cc", "Ai cho", "Không hoài", "Vợ ghét anh à? :(", "????", "Không mãi thui", "cc nè", "Không nữa đi", "Lại còn không nữa?", "Nính giùm", "Anh dỗi lung", "vl kh sợ??", "ôk anh sai", "Em được lắm", "Có nhưng màu đỏ", "Á à không bị lừa à", "Ấn không nhiều nhờ", "Anh chiều em quá nên hư đúng kh", "Cho bấm không lần cuối đó 😏"][noClickCount];
+            }
+            if (noClickCount == 32) {
+              noButton.style.display = 'none';
+            }
+          }
+        });
+      
+        yesButton.addEventListener('click', () => {
+          imageDisplay.src = './img/image7.gif'; // Change to image7.gif
+          valentineQuestion.textContent = "Bbi chọn đúng rùiii"; // Change the question text
+          noButton.style.display = 'none';
+          yesButton.textContent = 'Phần thưởng cho em';
+          yesButton.style.backgroundColor = '#867666';
+          yesButton.style.height = `12px`; // Update button height
+          yesButton.style.width = `auto`;
+          yesButton.style.fontSize = `20px`;
+          yesButton.id = 'denhopqua';
+
+          yesButton.addEventListener('mouseenter', function() {
+            yesButton.style.backgroundColor = '#867666af';
+          });
+
+          yesButton.addEventListener('mouseleave', function() {
+            yesButton.style.backgroundColor = '#867666';
+          });
+          confetti(); // Trigger confetti animation
+
+          document.getElementById('denhopqua').addEventListener('click', function() {
+          document.getElementById('hopqua').scrollIntoView({ behavior: 'smooth' });
+        });
+        });
+
+        document.getElementById('dichuyen').addEventListener('click', function() {
+          document.getElementById('cauhoi').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        
+      </script>  
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+<script>
+  AOS.init();
+</script>
+</html>

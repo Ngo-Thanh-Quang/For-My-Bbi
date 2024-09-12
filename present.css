@@ -1,0 +1,121 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container-boxpresent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
+    background-color: #f1debc;
+    background-image: url(img/giftbg.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+}
+.giftcontainer{
+    position:relative;
+}
+.giftcontainer::before{
+    content: '';
+    position: absolute;
+    width: 170px;
+    height: 20px;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    top: 90px;
+    left: -10px;
+}
+.gift{
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: #d5c3aa;
+}
+.gift::before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 100px;
+    background-color: #867666;
+    left: 62px;
+}
+.gift::after{
+    content: '';
+    position: absolute;
+    box-shadow: inset 0 10px rgba(0,0,0,0.3);
+    width: 150px;
+    height: 100px;
+}
+#click{
+    display: none;
+}
+.click{
+    position: absolute;
+    background-color: #d5c3aa;
+    width: 170px;
+    height: 40px;
+    top: -40px;
+    left: -10px;
+    transform-origin: bottom left;
+    transition: 0.3;
+    cursor: pointer;
+}
+.click::before{
+    position: absolute;
+    content: '';
+    width: 25px;
+    height: 40px;
+    background-color: #867666;
+    left: 72px;
+}
+.click::after{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 0;
+    border-bottom: 30px solid #867666;
+    border-top: 30px solid #867666;
+    border-left: 0px solid transparent;
+    border-right: 30px solid transparent;
+    transform: rotate(-90deg);
+    left: 65px;
+    top: -47px;  
+}
+#click:checked+.click{
+    transform: rotate(-110deg) scale(0.85);
+    transition: .5s;
+}
+#click:checked~.wishes{
+    transform: translateY(-120px);
+    z-index: 1;
+}
+.wishes{
+    position: absolute;
+    transition: .5s;
+    font-size: 30px;
+    text-align: center;
+    z-index: -1;
+    color: #4c2113;
+    text-shadow: 0 0 5px #867666;
+    cursor: pointer;
+}
+.wishes:hover{
+    color: antiquewhite;
+    transition: .1s;
+}
+@media (max-width:500px){
+    .giftcontainer::before{
+        left: -80px;
+    }
+    .gift{
+        left: -80px;
+    }
+    .container-boxpresent{
+        background-image: none;
+    }
+}
