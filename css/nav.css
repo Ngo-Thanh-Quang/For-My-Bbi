@@ -1,0 +1,118 @@
+.navbar-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar-container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+.logo{
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.thanh-navbar a{
+    font-size: 1.15rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 2.5rem;
+}
+
+body{
+    background: #f5f5f5;
+    font-family: "Poppins", sans-serif;
+}
+
+.thanh-navbar a:hover{
+    color: #800a3d;
+    transition: .5s ease;
+}
+
+#check{
+    display: none;
+}
+
+.icons-nav{
+    font-size: 2.8rem;
+    right: 5%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+}
+
+@media(max-width: 992px){
+    .navbar-container{
+        padding: 1.3rem 5%;
+    }
+}
+
+@media(max-width: 768px){
+    .icons-nav{
+        display: inline-flex;
+    }
+
+    #check:checked~.icons-nav #menu-icon{
+        display: none;
+    }
+
+    .icons-nav #close-icon{
+        display: none;
+    }
+
+    #check:checked~.icons-nav #close-icon{
+        display: block;
+    }
+
+    .thanh-navbar{
+        position: absolute;
+        top:100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+        transition: .3s ease;
+        overflow: hidden;
+    }
+
+    #check:checked~.thanh-navbar{
+        height: 7rem;
+    }
+
+    .thanh-navbar a{
+        display: block;
+        text-align: center;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        transform: translateY(-50px);
+        transition: .3s ease;
+    }
+
+    #check:checked~.thanh-navbar a{
+        transform: translateY(0);
+    }
+}

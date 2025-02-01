@@ -11,7 +11,7 @@ body{
     overflow: hidden;
     font-family: sans-serif;
     background-color: #f1debc;
-    background-image: url(img/giftbg.jpeg);
+    background-image: url(../img/giftbg.jpeg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
