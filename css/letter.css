@@ -71,7 +71,7 @@
 @media(max-width: 768px) {
   .postcard {
     width: 90%;
-    height: 600px;
+    height: 80%;
     padding: 2em;
   }
   .text-letter{
