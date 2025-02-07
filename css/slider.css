@@ -132,7 +132,19 @@
     position: absolute;
     inset: auto 10px 10px 10px;
 }
+.nen-pc{
+    display: block;
+}
+.nen-mobi{
+    display: none;
+}
 @media screen and (max-width: 678px) {
+    .nen-pc{
+        display: none;
+    }
+    .nen-mobi{
+        display: block;
+    }
     .thumbnail{
         justify-content: start;
     }

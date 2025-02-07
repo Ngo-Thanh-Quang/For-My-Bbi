@@ -98,3 +98,19 @@ body {
     color: #fff;
     transition: all 0.3s ease;
 }
+
+@media(max-width: 768px) {
+    .image-box img {
+        width: 80%;
+    }
+
+    .canchinh-hang {
+        font-size: 20px;
+    }
+
+    .hoc-btn,
+    .mong-btn {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}
